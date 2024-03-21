@@ -1,0 +1,31 @@
+.Intro {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    background-color: beige;
+    align-items: center;
+    height: 400px;
+    padding: 30px;
+}
+.Intro-Text{
+    width: 40%;
+}
+.Intro-Img{
+    width: 40%;
+}
+.Intro-Img img {
+    width: 80%;
+    height: 300px;
+}
+.Intro-Text button {
+    padding: 15px 23px;
+    background-color: bisque;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all .5s;
+}
+.Intro-Text button:hover {
+    background-color: brown;
+    color: aliceblue;
+}

@@ -1,0 +1,16 @@
+.Title {
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 30px;
+}
+h1 {
+    font-size: 5rem;
+    margin: 0;
+    color:rgb(221, 191, 148);
+}
+.Title h4 {
+    font-size: 1.7rem;
+    margin: 0 50px 0 0;
+    color: rgb(143, 135, 124);
+    text-align: right;
+}
