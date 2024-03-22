@@ -3,23 +3,30 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Adjust this branch name if you're deploying from a different branch
+      - main  # Change to your main branch if it's different
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
       - name: Install dependencies
         run: npm install
 
-      - name: Build app
+      - name: Build
         run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          deploy_key: ${{ secrets.SSH_DEPLOY_KEY }}
+          external_repository: umerakmal/umerakmal.github.io  # Change to your GitHub Pages repository
+          publish_branch: main
+          publish_dir: dist
